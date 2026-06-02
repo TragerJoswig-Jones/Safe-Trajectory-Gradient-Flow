@@ -10,6 +10,12 @@ Grid-interfacing inverters allow renewable resources to be connected to the elec
 
 In this paper, we present a safe gradient flow based approach to iteratively optimize the predicted trajectory of a systems states, while maintaining a set of constraints on the states and inputs. A trajectory optimization problem is formulated and the trajectory is improved upon iteratively over a receding predicted horizon. The safe gradient flow approach allows for the trajectory to maintain anytime feasibility as a limited number of improving iterations are made in each time step. This approach, which we call ***Safe Trajectory Gradient Flow*** can be made less computationally expensive than model predictive control and can be implemented in real-time for systems that require fast control frequencies. We apply this approach to a grid-interfacing inverter control problem and demonstrate its capability to drive the system states to optimal points when given output power reference values that are infeasible due to the constraints on the inverters output current.
 
+### Example System
+$$\dot{x} = \begin{bmatrix} 0 & 1 \\\ 0 & 0 \end{bmatrix} x + \begin{bmatrix} 0 \\\ 1 \end{bmatrix} u$$
+| States  | Input |
+| ------------- | ------------- |
+| ![State trajctory of a linear system with safe trajectory gradient flow control applied.](https://raw.githubusercontent.com/TragerJoswig-Jones/Safe-Trajectory-Gradient-Flow/refs/heads/main/figures/LinearSystemExampleStateTrajectory.gif)  | ![Input trajctory of a linear system with safe trajectory gradient flow control applied.](https://raw.githubusercontent.com/TragerJoswig-Jones/Safe-Trajectory-Gradient-Flow/refs/heads/main/figures/LinearSystemExampleInputTrajectory.gif) |
+
 ## Acknowledgments
 
 The development of this code was supported in part by NSF grant ECCS-2023531.
